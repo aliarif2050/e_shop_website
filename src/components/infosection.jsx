@@ -1,9 +1,8 @@
 import React from 'react'
 import { FaHeadset, FaLock, FaMoneyBillWave, FaShippingFast, FaTag } from 'react-icons/fa'
-import { FaMoneyBill1Wave } from 'react-icons/fa6'
 
-const infosection = () => {
-    const infoItem = [
+const InfoSection = () => {
+    const infoItems = [
         {
             icon: <FaShippingFast className='text-3xl text-teal-800'/>,
             title:'Free Shipping',
@@ -16,8 +15,8 @@ const infosection = () => {
         },
         {
             icon: <FaMoneyBillWave className='text-3xl text-teal-800'/>,
-            title:'',
-            description:'',
+            title:'100% Money Back',
+            description:'Full refund if you are not satisfied',
         },
         {
             icon: <FaLock className='text-3xl text-teal-800'/>,
@@ -29,14 +28,21 @@ const infosection = () => {
             title:'Discount',
             description:'Enjoy the best prices on our products',
         },
-    ]
+    ];
   return (
-    <div>
-        <div>
-
+    <div className='bg-white pb-7 pt-7'>
+        <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4'>
+            {infoItems.map((item,index)=>(
+                <div key= {index} className='flex flex-col items-center text-center p-4 rounded-lg shadow-2xl
+                transform transition-trasform duration-300 hover:scale-105 cursor pointer'>
+                    {item.icon}
+                    <h3 className='mt-4 text-xl font-semibold'>{item.title}</h3>
+                    <p className='mt-2 text-gray-600'>{item.description}</p>
+                </div>
+            ))}
         </div>
     </div>
   )
 }
 
-export default infosection
+export default InfoSection

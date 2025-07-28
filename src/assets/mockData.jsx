@@ -5,5 +5,6 @@ export const Catrgories =
 "Home & Kitchen",
 "Beauty",
 "Sports",
-"Automotive"
+"Automotive",
+"Gaming"
 ];

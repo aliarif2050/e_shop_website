@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className='bg=white shadow-md'>
+        <nav className='bg-white shadow-md'>
             <div className='container mx-auto px-4 md:px-16 lg:px-24 py-4 flex justify-between items-center'>
                 <div className='text-lg font-bold'>
                     <Link to="/">E-shop</Link>
@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className='relative flex-1 mx-4'>
                     <form action="">
                         <input type='text' placeholder='Search Product'
-                            className='w-full border py-2 px-4' />
+                            className='w-full border py-2 px-4 rounded-xl' />
                         <FaSearch className='absolute top-3 right-3 text-teal-800'></FaSearch>
                     </form>
                 </div>
