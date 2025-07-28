@@ -34,7 +34,7 @@ const InfoSection = () => {
         <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4'>
             {infoItems.map((item,index)=>(
                 <div key= {index} className='flex flex-col items-center text-center p-4 rounded-lg shadow-2xl
-                transform transition-trasform duration-300 hover:scale-105 cursor pointer'>
+                transform transition-trasform duration-300 hover:scale-105 cursor-pointer'>
                     {item.icon}
                     <h3 className='mt-4 text-xl font-semibold'>{item.title}</h3>
                     <p className='mt-2 text-gray-600'>{item.description}</p>

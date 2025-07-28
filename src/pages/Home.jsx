@@ -6,6 +6,7 @@ import CategoriesSection from '../components/CategoriesSection'
 import { setProducts } from '../redux/productSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import Productcard from '../components/productcard'
+import Shop from './Shop'
 
 
 
@@ -26,8 +27,8 @@ const Home = () => {
                     <ul className='space-y-4 bg-gray-200 p-3 rounded-b-xl'>
                         {Catrgories.map((category, index) =>
                         (
-                            <li key={index}>
-                                <span className='w-2 h-2 border border-teal-800 mr-2'></span>
+                            <li key={index} className='cursor-pointer'>
+                                <span className='w-2 h-2 border border-teal-800 mr-2'></span> 
                                 {category}
                             </li>
                         ))}
@@ -35,13 +36,13 @@ const Home = () => {
                 </div >
                 <div className='w-full md:w-9/12 mt-8 md:mt-0 h-96 relative'>
                     <img className='w-150 shadow-md rounded-xl' src={E_shop} alt='E_shop Main Pic' />
-                    <div className='absolute top-28 left-8'>
+                    <div className='absolute top-28 left-8 md:top-28 md:left-8'>
                         <p>Chaotic_boie Here</p>
                         <h2 className='text-2xl font-bold'>Welcome to E-Shop</h2>
                         <p>Tons of products to buy!!</p>
                         <p>Click the button below to start<br/> shoping</p>
-                        <button className='bg-teal-800 ml-9 px-8 py-1.5 text-white mt-4 hover:bg-teal-800
-                        transform transition-trasform duration-300 hover:scale-105'>SHOP NOW</button>
+                        <button className='bg-teal-800 rounded-full ml-9 px-8 py-1.5 text-white mt-4 hover:bg-teal-800
+                        transform transition-trasform duration-300 hover:scale-105 cursor-pointer'>SHOP NOW</button>
                     </div>
                 </div>
             </div>
@@ -56,6 +57,7 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+            <Shop/>
         </div>
     )
 }
