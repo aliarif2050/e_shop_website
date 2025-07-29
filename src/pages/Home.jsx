@@ -37,11 +37,11 @@ const Home = () => {
                 </div >
                 <div className='w-full md:w-9/12 mt-8 md:mt-0 h-96 relative'>
                     <img className='w-177 h-105 shadow-md rounded-xl' src={Dashing} alt='E_shop Main Pic' />
-                    <div className='absolute top-28 left-8 md:top-28 md:left-8'>
-                        <p>Chaotic_boie Here</p>
-                        <h2 className='text-2xl font-bold'>Welcome to E-Shop</h2>
-                        <p>Tons of products to buy!!</p>
-                        <p>Click the button below to start<br/> shoping</p>
+                    <div className='absolute top-27 left-2 md:top-28 md:left-8'>
+                        <p className='text-sm md:text-xl'>Chaotic_boie Here</p>
+                        <h2 className='text-lg font-bold md:text-2xl'>Welcome to E-Shop</h2>
+                        <p className='text-sm md:text-xl'>Tons of products to buy!!</p>
+                        <p className='text-sm md:text-xl'>Click the button below to start<br/> shoping</p>
                         <button className='bg-teal-800 rounded-full ml-9 px-8 py-1.5 text-white mt-4 hover:bg-teal-800
                         transform transition-trasform duration-300 hover:scale-105 cursor-pointer'>SHOP NOW</button>
                     </div>
