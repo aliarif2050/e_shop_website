@@ -4,6 +4,7 @@ import Footer from "./components/Footer"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
 import Home from "./pages/home"
+import Checkout from "./pages/Checkout"
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
          <Route path="/" element={<Home/>}></Route>
          <Route path="/shop" element={<Shop/>}> </Route>
          <Route path="/cart" element={<Cart/>}> </Route>
+         <Route path="/checkout" element={<Checkout/>}> </Route>
+
 
 
       </Routes>
