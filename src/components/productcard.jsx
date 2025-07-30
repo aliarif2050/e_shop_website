@@ -2,6 +2,7 @@ import React from 'react'
 import { FaStar } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../redux/cartSlice'
+import confetti from 'canvas-confetti'
 
 
 const Productcard = ({product}) => {
@@ -11,7 +12,11 @@ const Productcard = ({product}) => {
     e.preventDefault()
     dispatch(addToCart(product))
   alert("Product added successfully")
-
+  confetti({
+  particleCount: 500,
+  spread: 360,
+  origin: { x: 0.5, y: 0.5 }
+});
    }
   return (
     <div className='bg-white p-4 shadow rounded relative border

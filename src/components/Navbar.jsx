@@ -20,11 +20,11 @@ const Navbar = () => {
                 </div>
                 <div className='flex items-center space-x-4'>
                     <Link to='/cart' className='relative'><FaShoppingCart className='text-lg ' />
-                    {products.length>0 && (
+                    {products.length>0 ? (
                         <span className=' absolute top-0 text-xs w-4 left-3 bg-teal-800 rounded-full flex justify-center items-center text-white'>
                             {products.length}
                         </span>
-                    )}
+                    ):null}
                     </Link>
                     <button className='hidden md:block'>
                         Login | Register
