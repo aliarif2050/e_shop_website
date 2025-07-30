@@ -1,13 +1,26 @@
 import React, { useState } from 'react'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
-const Checkout = () => {
+const Checkout = ({setOrder,orderNumber}) => {
     const [billingToglle, setBillingToggle] = useState(true)
     const [shippingToglle, setShippingToggle] = useState(true)
     const [paymentMethod, setPaymentMethod] = useState('cod')
     const [paymentToglle, setPaymentToggle] = useState(true)
+    const navigate = useNavigate()
+    const handleOrder = ()=> {
+        const newOrder= {
+            products: cart.products,
+            OrderNumber: orderNumber,
+            shippingInformation: ShippingInfo,
+            billingInformation : BillingInfo,
+            totalPrice: cart.totalPrice
+        }
+        setOrder(newOrder)
+        navigate('/order-confirmation')
+    }
     const cart = useSelector(state => state.cart)
     const [BillingInfo,setBillingInfo]=useState({
         name:'',
@@ -37,22 +50,22 @@ const Checkout = () => {
                             <div>
                                 <div>
                                     <label className='block text-gray-700'>Name</label>
-                                    <input type="text" name='name' placeholder='Enter Name'
-                                     className='w-full px-3 py-2 border' onClick={(e)=>setBillingInfo({...BillingInfo, name: e.target.value})}/>
+                                    <input type="text" name='name' placeholder='Enter Name' value={BillingInfo.name}
+                                     className='w-full px-3 py-2 border' onChange={(e)=>setBillingInfo({...BillingInfo, name: e.target.value})}/>
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label className='block text-gray-700'>Email</label>
-                                    <input type="email" name='email' placeholder='Enter Email'
-                                     className='w-full px-3 py-2 border' onClick={(e)=>setBillingInfo({...BillingInfo, email: e.target.value})} />
+                                    <input type="email" name='email' placeholder='Enter Email'  value={BillingInfo.email}
+                                     className='w-full px-3 py-2 border' onChange={(e)=>setBillingInfo({...BillingInfo, email: e.target.value})} />
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label htmlFor="">Phone</label>
-                                    <input type="text" name='phone' placeholder='Enter Phone'
-                                     className='w-full px-3 py-2 border' onClick={(e)=>setBillingInfo({...BillingInfo, phone: e.target.value})} />
+                                    <input type="text" name='phone' placeholder='Enter Phone' value={BillingInfo.phone}
+                                     className='w-full px-3 py-2 border' onChange={(e)=>setBillingInfo({...BillingInfo, phone: e.target.value})} />
                                 </div>
                             </div>
                         </div>
@@ -67,22 +80,22 @@ const Checkout = () => {
                             <div>
                                 <div>
                                     <label className='block text-gray-700'>Address</label>
-                                    <input type="text" name='address' placeholder='Enter Address' 
-                                    className='w-full px-3 py-2 border' onClick={(e)=>setShippingInfo({...ShippingInfo, address: e.target.value})}/>
+                                    <input type="text" name='address' placeholder='Enter Address' value={ShippingInfo.address}
+                                    className='w-full px-3 py-2 border' onChange={(e)=>setShippingInfo({...ShippingInfo, address: e.target.value})}/>
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label className='block text-gray-700'>City Name</label>
-                                    <input type="text" name='city' placeholder='Enter City Name'
-                                     className='w-full px-3 py-2 border' onClick={(e)=>setShippingInfo({...ShippingInfo, city: e.target.value})}/>
+                                    <input type="text" name='city' placeholder='Enter City Name' value={ShippingInfo.city}
+                                     className='w-full px-3 py-2 border' onChange={(e)=>setShippingInfo({...ShippingInfo, city: e.target.value})}/>
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     <label htmlFor="">Zip Code</label>
-                                    <input type="text" name='zip code' placeholder='Enter Zip code' 
-                                    className='w-full px-3 py-2 border' onClick={(e)=>setShippingInfo({...ShippingInfo, zip: e.target.value})}/>
+                                    <input type="text" name='zip code' placeholder='Enter Zip code' value={ShippingInfo.zip}
+                                    className='w-full px-3 py-2 border' onChange={(e)=>setShippingInfo({...ShippingInfo, zip: e.target.value})}/>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +172,8 @@ const Checkout = () => {
                             <span>${cart.totalPrice.toFixed(2)}</span>
                         </div>
                     </div>
-                    <button className='w-full bg-teal-800 text-white py-2 mt-6 hover:bg-teal-800 rounded-full'>
+                    <button className='w-full bg-teal-800 text-white py-2 mt-6 hover:bg-teal-800 rounded-full'
+                    onClick={handleOrder}>
                         Place Order</button>
                 </div>
                         

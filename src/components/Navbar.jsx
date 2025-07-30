@@ -35,7 +35,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='flex items-center justify-center space-x-10 py-4 text-sm font-bold'>
-                <Link to="/home" className='hover: underline'>HOME</Link>
+                <Link to="/" className='hover: underline'>HOME</Link>
                 <Link to="/shop" className='hover: underline'>SHOP</Link>
                 <Link to="/" className='hover: underline'>CONTACT</Link>
                 <Link to="/" className='hover: underline'>ABOUT</Link>
