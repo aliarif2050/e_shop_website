@@ -16,7 +16,7 @@ const [orderNumber, setOrderNumber] = useState(1);
 
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="https://aliarif2050.github.io/e_shop_website/" >
       <Navbar/>
       <Routes>
          <Route path="/" element={<Home/>}></Route>
