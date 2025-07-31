@@ -37,8 +37,8 @@ const Order = ({order}) => {
                 <span className='font-semibold'>${order.totalPrice.toFixed(2)}</span>
              </div>
              <div className='mt-6'>
-                <button className='bg-green-500 text-white py-2 px-4 hover:bg-green-600'>Order tracking</button>
-                <button className='ml-4 bg-teal-800 text-white py-2 px-4 hover:bg-teal-900' onClick={()=> navigate('/')}>Continue Shopping</button>
+                <button className='bg-green-500 text-white py-2 px-4 hover:bg-green-600 rounded-full'>Order tracking</button>
+                <button className='ml-4 bg-teal-800 text-white py-2 px-4 hover:bg-teal-900 rounded-full' onClick={()=> navigate('/')}>Continue Shopping</button>
              </div>
             
 
