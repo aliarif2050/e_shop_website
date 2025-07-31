@@ -7,6 +7,7 @@ import { setProducts } from '../redux/productSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import Productcard from '../components/productcard'
 import Shop from './Shop'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -14,10 +15,14 @@ import Shop from './Shop'
 const Home = () => {
     const dispatch = useDispatch();
     const products = useSelector(state => state.product);
+    const navigate = useNavigate()
     useEffect(()=>
     {
         dispatch(setProducts(mockData))
     })
+    const hanldleClick = ()=>{
+        navigate('/shop')
+    }
     return (
         <div className='bg-white mt-2 px-4 md:px-16 lg:px-24 '>
             <div className='container mx-auto py-7 flex flex-col md:flex-row space-x-2 '>
@@ -43,7 +48,7 @@ const Home = () => {
                         <p className='text-sm md:text-xl'>Tons of products to buy!!</p>
                         <p className='text-sm md:text-xl'>Click the button below to start<br/> shoping</p>
                         <button className='bg-teal-800 rounded-full ml-9 px-8 py-1.5 text-white mt-4 hover:bg-teal-800
-                        transform transition-trasform duration-300 hover:scale-105 cursor-pointer'>SHOP NOW</button>
+                        transform transition-trasform duration-300 hover:scale-105 cursor-pointer' onClick={hanldleClick}>SHOP NOW</button>
                     </div>
                 </div>
             </div>

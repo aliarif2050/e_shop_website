@@ -158,7 +158,7 @@ const Checkout = ({ setOrder, orderNumber }) => {
                                 <label className='block text-gray-700 ml-2'>Cash on Delivery</label>
 
                             </div>
-                            <div className='flex items-center mb-2'>
+                            {/* <div className='flex items-center mb-2'>
 
                                 <input type="radio" name='payment' checked={paymentMethod === 'debit card'}
                                     onChange={() => setPaymentMethod('debit card')} />
@@ -187,9 +187,9 @@ const Checkout = ({ setOrder, orderNumber }) => {
                                         </div>
                                     </div>
                                 </div>
-                            ) : null}
+                            ) : null} */}
                         </div>
-                        {paymentMethod}
+                        <p>WE WILL ADD OTHER PAYMENT TYPES SOON😊</p>
                     </div>
                 </div>
                 <div className='md:w-1/3 bg-white p-6 rounded-lg shadow-md border'>

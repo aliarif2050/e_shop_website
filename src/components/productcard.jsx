@@ -11,7 +11,7 @@ const Productcard = ({ product }) => {
   const handleAddToCart = (e, product) => {
     e.stopPropagation()
     e.preventDefault()
-    dispatch(addToCart(product))
+    dispatch(addToCart({ ...product, quantity: 1 }))
     alert("Product added successfully")
     confetti({
       particleCount: 500,
