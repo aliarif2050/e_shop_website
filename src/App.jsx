@@ -9,6 +9,8 @@ import Order from "./pages/Order"
 import { useState } from "react"
 import FilterData from "./pages/FilterData"
 import ProductDetail from "./pages/ProductDetail"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 
 function App() {
 const [order,setOrder] = useState(null)
@@ -26,12 +28,8 @@ const [orderNumber, setOrderNumber] = useState(1);
          <Route path="/order-confirmation" element={<Order order={order} />}> </Route>
          <Route path="/filter-data" element={<FilterData/>}> </Route>
          <Route path="/product/:id" element={<ProductDetail/>}> </Route>
-
-
-
-
-
-
+         <Route path="/about" element={<About/>}> </Route>
+         <Route path="/contact" element={<Contact/>}> </Route>
       </Routes>
     <Footer/>
     </BrowserRouter>
